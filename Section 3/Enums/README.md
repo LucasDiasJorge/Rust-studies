@@ -90,3 +90,12 @@ In Rust, `enum`s allow you to define a type that can be one of several variants.
 
 ### `match` Statement
 The `match` statement is used to control flow by matching a value against different patterns. It ensures that all possible cases are handled, either explicitly or by using a wildcard `_`.
+
+### Using `Option` for Nullable Values
+
+In Rust, the `Option` enum is a powerful tool for representing values that may or may not be present. It helps avoid common issues associated with `null` values in other programming languages by explicitly handling the presence or absence of a value. `Option` has two variants:
+
+- `Some(value)`: Indicates the presence of a value.
+- `None`: Indicates the absence of a value.
+
+`Option` makes it clear which values are available and which might be absent, encouraging safer handling of potentially null data. Rust's `Option` enum, combined with `match` statements, offers a reliable way to deal with nullable values in a manner that’s both explicit and concise.
