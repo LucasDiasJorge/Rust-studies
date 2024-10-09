@@ -1,4 +1,4 @@
-# Enums and `match` Statements
+# Enums and Match Statements
 
 This project is a basic Rust program that explores the use of `enum` types and `match` statements, two powerful features in Rust that allow for expressive and flexible control flow. The code includes two enums, `Pet` and `IpAddrKind`, and demonstrates how to use the `match` statement to handle different cases based on the enum's variants.
 
