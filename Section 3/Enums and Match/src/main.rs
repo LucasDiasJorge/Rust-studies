@@ -75,6 +75,30 @@ fn main() {
     println!("six is: {:?}", six);
     println!("none is: {:?}", none); // `Option<i32>` does not implement `Display` (required by `{}`): E0277 if without '?'
 
+    let dog = Some(Pet::Dog);
+
+    if let Some(Pet::Dog) = dog {
+        println!("Dog found!");
+    } else {
+        println!("Dog not found");
+    }
+
+    let cat = Some(Pet::Cat);
+
+    if let Some(Pet::Dog) = cat {
+        println!("Dog found!");
+    } else {
+        println!("Dog not found");
+    }
+
+    let mut stack = Vec::new();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    while let Some(top) = stack.pop() {
+        println!("{}", top)
+    }
 
 }
 
