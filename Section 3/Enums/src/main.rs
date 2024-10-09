@@ -68,6 +68,19 @@ fn main() {
         None => println!("No value present"),
     }
 
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+
+    println!("six is: {:?}", six);
+    println!("none is: {:?}", none); // `Option<i32>` does not implement `Display` (required by `{}`): E0277 if without '?'
+
 
 }
 
+fn plus_one (x: Option<i32>) -> Option<i32> {
+    match x {
+        Some(i) => Some(i+1),
+        None => None,
+    }
+}
