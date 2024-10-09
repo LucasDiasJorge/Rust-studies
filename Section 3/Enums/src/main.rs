@@ -41,32 +41,24 @@ struct IpAddr {
 fn main() {
 
     let dog = Pet::Dog;
-    println!("{} \"{}\"",dog.who_am_i(), dog.noise());
-
-    // let home = IpAddr {
-    //     kind: IpAddrKind::V4,
-    //     address: String::from("127.0.0.1"),
-    // };
+    println!("{} \"{}\"", dog.who_am_i(), dog.noise());
 
     let home = IpAddr {
-        kind: IpAddrKind::V4(String::from("127.0.0.1"))
+        kind: IpAddrKind::V4(String::from("127.0.0.1")),
+        address: String::from("127.0.0.1")
     };
 
     let loopback = IpAddrKind::V6(Some(String::from("::1")));
     let unspecified_v6 = IpAddrKind::V6(None);
 
+    // Option is basically no definition
     let some_number = Some(5);
     let some_string = Some("a string");
-    let nothing = Option<i32>::None; // Option<T>, let x = 5 == i32
+    let nothing: Option<i32> = None;
 
     let x: i32 = 5;
     let y: Option<i32> = Some(5);
 
-    // let sum = x + y; // Error, can't add i32 and Option<i32>
-
-}
-
-enum Option<T> { // T means Generic, any type of data
-    None,
-    Some<T>
+    let sum = x + y.unwrap_or(0);
+    println!("A soma é: {}", sum);
 }
