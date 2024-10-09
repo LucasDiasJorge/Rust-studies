@@ -51,7 +51,7 @@ fn main() {
     let loopback = IpAddrKind::V6(Some(String::from("::1")));
     let unspecified_v6 = IpAddrKind::V6(None);
 
-    // Option is basically no definition
+    // Fixing definition, Like Java optional: Some() value present, None isn't
     let some_number = Some(5);
     let some_string = Some("a string");
     let nothing: Option<i32> = None;
@@ -60,5 +60,14 @@ fn main() {
     let y: Option<i32> = Some(5);
 
     let sum = x + y.unwrap_or(0);
-    println!("A soma é: {}", sum);
+    println!("Sum is: {}", sum);
+
+    let x: Option<i32> = Some(5);
+    match x {
+        Some(v) => println!("Value present: {}", v),
+        None => println!("No value present"),
+    }
+
+
 }
+
