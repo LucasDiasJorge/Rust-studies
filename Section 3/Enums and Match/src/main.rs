@@ -100,6 +100,30 @@ fn main() {
         println!("{}", top)
     }
 
+    let x = 10;
+
+    match x {
+        1 | 2 => println!("one or two"),
+        _ => println!("anything"), // _ is or operator
+    }
+
+    let y = 10;
+
+    match y {
+        1..=5 => println!("one to five"), // including 5
+        6..=10 => println!("six to ten"), // including 10
+        _ => println!("others")
+    }
+
+    let z = Some(5);
+    let a = 5;
+
+    match z {
+        Some(50) => println!("fifty"),
+        Some(z) if z == a => println!("The five = five"), // if inside if
+        _ => println!("others, run to the hills")
+    }
+
 }
 
 fn plus_one (x: Option<i32>) -> Option<i32> {
