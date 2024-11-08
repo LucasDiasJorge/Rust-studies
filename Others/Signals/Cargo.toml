@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 crossbeam-channel = "0.5.13"
 anyhow = "1.0.93"
+ctrlc = "3.4.5"
