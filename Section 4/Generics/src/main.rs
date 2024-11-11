@@ -35,10 +35,20 @@ fn main() {
     let coord = Point{x: 5.0, y: 5.0};
     let coord2 = Point{x: "5", y: 5.0};
 
-    let couser1 = Course{headline: String::from("Headline"), author: String::from("Author")};
-    let couser2 = AnotherCourse{headline: String::from("Headline 2"), author: String::from("Author 2")};
+    let course1 = Course{headline: String::from("Headline"), author: String::from("Author")};
+    let course2 = AnotherCourse{headline: String::from("Headline 2"), author: String::from("Author 2")};
 
-    println!("{}",couser1.overview());
-    println!("{}",couser2.overview());
+    //println!("{}",course1.overview());
+    //println!("{}",course2.overview());
+
+    call_overview(&course1);
+    call_overview(&course2);
 
 }
+
+fn call_overview(item: &impl Overview) {
+    println!("Call overview:\n {}", item.overview());
+}
+
+// fn overview(item1: &impl Overview, item2: &impl Overview) {} Different types
+// fn overview<T: Overview>(item: &T, item2: &T) {} Same types
